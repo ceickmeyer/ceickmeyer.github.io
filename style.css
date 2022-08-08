@@ -1,0 +1,486 @@
+body {
+  background: #fff;
+  color: #000;
+  font-family: arial, Helvetica, sans-serif;
+  font-size: 9px;
+  padding: 0;
+  margin: 10px;
+}
+#pt_ticketTable {
+  background: transparent none;
+}
+#pt_left {
+  width: 306px;
+  text-align: center;
+  vertical-align: top;
+}
+#pt_right {
+  width: 316px;
+  padding-left: 15px;
+  vertical-align: top;
+}
+
+/* static element styles */
+
+.teamImgLogo,
+.teamAdvert1,
+.seatLocation {
+  border: 3px solid #000;
+  border-top: none;
+  padding: 0;
+  margin: 0;
+}
+.teamImgLogo img,
+.teamAdvert1 img {
+  display: block;
+}
+.teamAdvert2 img {
+  border: 1px solid #000;
+}
+.mlbLogo {
+  padding: 4px 0px;
+  width: 300px;
+  text-align: center;
+}
+.mlbLogo span {
+  font-size: 15px;
+  font-weight: bold;
+  vertical-align: top;
+}
+.mlbLogo img {
+  padding: 0px 15px 0px 0px;
+  vertical-align: top;
+  display: inline;
+}
+.thisTicket {
+  padding-bottom: 7px;
+  width: 300px;
+  text-align: center;
+}
+
+/* seat detail and barcode element styles */
+
+.barcode {
+  border: 3px solid #000;
+  padding-top: 5px;
+}
+.barcode img {
+  border: none;
+}
+.instructionsDetail {
+  text-align: left;
+  width: 300px;
+}
+.seatInfo {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px dotted #000;
+  border-bottom: 1px dotted #000;
+  overflow: auto;
+  width: 100%;
+}
+.row {
+}
+.box {
+  border: 1px solid #000;
+  overflow: hidden;
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
+.barcodeLegalTextTop,
+.barcodeLegalTextBtm,
+.legaleselefttext {
+  margin: 0px 6px 6px 6px;
+  width: 96%;
+  text-align: left;
+  font-size: 5pt;
+}
+.barcodeLegalTextTop {
+  font-size: 7pt;
+}
+.seatDetail {
+  height: 115px;
+  border: 3px solid #000;
+  border-top: none;
+  /*border-bottom:none;*/
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.tampaBayDetail {
+  height: 75px;
+  border: 3px solid #000;
+  border-top: none;
+  border-bottom: none;
+  font-size: 11px;
+  font-family: arial, Helvetica, sans-serif;
+  padding: 0 !important;
+}
+.marlinsSeatDetail {
+  background: url("https://cache1.stubhubstatic.com/cms/content-content/ticketDisplay/300x140_double_M_watermark.jpg")
+    no-repeat;
+  height: 132px;
+}
+.marlinsSeatDetailNew {
+  height: 132px;
+}
+.seatDetails {
+  /*width:300px;*/
+  border-top: 3px solid #000;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.seatDetailExtn {
+  height: 150px;
+  border: 3px solid #000;
+  border-top: none;
+  /*border-bottom:none;*/
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.seatDetailExtd {
+  height: 180px;
+  border: 3px solid #000;
+  border-top: none;
+  /*border-bottom:none;*/
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.seatLocation {
+  width: 300px;
+  border: 3px solid #000;
+  border-top: none;
+  padding: 0;
+  text-align: left;
+}
+.seatCell {
+  float: left;
+  padding-left: 6px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 7pt;
+}
+.seatCells {
+  text-align: left;
+  font-weight: bold;
+  font-size: 8pt;
+}
+.seatCellFullWidth {
+  width: 290px;
+}
+.seatSection {
+  width: 119px;
+}
+.seatRow {
+  width: 89px;
+}
+.seatNum {
+  width: 64px;
+}
+/*.seat-Section{
+    padding-right: 24px;
+    }*/
+.seat-Row {
+  padding-right: 24px;
+}
+.seat-Num {
+  padding-right: 24px;
+}
+.seatLoc {
+  width: 272px;
+  font-family: Arial;
+  color: #000000;
+  font-weight: bold;
+  font-size: 8pt;
+}
+.seatDtl {
+  font-family: Arial;
+  color: #000000;
+  font-weight: bold;
+  font-size: 10pt;
+}
+.seatDtl9 {
+  font-family: Arial;
+  color: #000000;
+  font-weight: bold;
+  font-size: 9pt;
+}
+.seatLn1 {
+  font-family: Arial;
+  color: #000000;
+  font-size: 8pt;
+  font-weight: normal;
+}
+.seatLn1 b {
+  font-family: Arial;
+  color: #000000;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.seatLn2 {
+  float: left;
+}
+.seatLn3 {
+  float: left;
+}
+
+.seatLn4 {
+  font-family: Arial;
+  color: #000000;
+  font-weight: normal;
+  font-size: 7pt;
+}
+.seatTxt {
+  font-family: Arial;
+  color: #000000;
+  font-weight: normal;
+  font-size: 8pt;
+  padding: 0px 0px 0px 20px;
+}
+.seatSection-Header {
+  font-family: Verdana, Helvetica, sans-serif;
+  color: #666666;
+  font-weight: bold;
+  font-size: 10pt;
+  padding-right: 5px;
+}
+.seatSection-Header9 {
+  font-family: Verdana, Helvetica, sans-serif;
+  color: #666666;
+  font-weight: bold;
+  font-size: 9pt;
+  padding-right: 5px;
+}
+.seat_clear {
+  clear: both;
+}
+.seatLocation-Inner {
+  padding: 5px;
+}
+.seatSectionHeader {
+  font-family: verdana, Helvetica, sans-serif;
+  color: #9f9f9f;
+  font-weight: bold;
+  font-size: 10pt;
+}
+.seatRowWidth {
+  width: 300px;
+}
+.seatCenter {
+  width: 100%;
+  text-align: center;
+}
+
+/* transaction details element styles */
+
+.transactionDetail {
+  width: 300px;
+  padding: 10px 3px 0 3px;
+  text-align: left;
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.nymetstransactionDetail {
+  font-size: 11px;
+  margin: 20px 50px 0;
+  width: 60%;
+}
+
+.marlinsTransactionDetail {
+  background: url("https://cache1.stubhubstatic.com/cms/content-content/ticketDisplay/150x140_single_M_watermark.jpg")
+    no-repeat right;
+  height: 140px;
+}
+.marlinsTransactionDetailNew {
+  height: 140px;
+}
+.transactionLabel {
+  font-weight: bold;
+  width: 156px;
+  display: block;
+  float: left;
+}
+.transactionLabelrighttext {
+  font-weight: normal;
+  display: block;
+  width: 127px;
+  float: right;
+}
+.sectionHeader {
+  font-family: verdana, Helvetica, sans-serif;
+  color: #9f9f9f;
+  font-weight: bold;
+  font-size: 11pt;
+}
+.instructionsDetail .sectionHeader {
+  color: #000;
+}
+.placeholder,
+.finePrint {
+  font-size: 3pt;
+}
+.legal {
+  text-align: left;
+  width: 300px;
+  padding-bottom: 6px;
+  font-size: 3pt;
+}
+.legal p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 4px;
+}
+.legal22 {
+  font-size: 2.2pt;
+}
+.legal27 {
+  font-size: 2.7pt;
+}
+.legal35 {
+  font-size: 3.5pt;
+}
+.legal57 {
+  font-size: 5.7pt;
+}
+.legal63 {
+  font-size: 6.3pt;
+}
+.legal3 {
+  font-size: 3px;
+}
+.legal4 {
+  font-size: 4px;
+}
+.legal45 {
+  font-size: 4.5px;
+}
+.legal5 {
+  font-size: 5px;
+}
+.legal6 {
+  font-size: 6px;
+}
+.legal7 {
+  font-size: 7px;
+}
+.legal8 {
+  font-size: 8px;
+}
+.legal9 {
+  font-size: 9px;
+}
+.legalcontent {
+  text-align: left;
+  width: 300px;
+  padding-bottom: 6px;
+  font-size: 3pt;
+}
+.legalcontent p {
+  margin: 0;
+  padding: 0;
+  line-height: 120%;
+}
+.legalcontent_pt9 {
+  font-size: 9pt;
+}
+.legalcontent_pt8 {
+  font-size: 8pt;
+}
+.legalcontent_pt7 {
+  font-size: 7pt;
+}
+.legalcontent_pt6 {
+  font-size: 6pt;
+}
+.legalcontent_pt55 {
+  font-size: 5.5pt;
+}
+.legalcontent_pt5 {
+  font-size: 5pt;
+}
+.legalcontent_pt475 {
+  font-size: 4.75pt;
+}
+.legalcontent_pt45 {
+  font-size: 4.5pt;
+}
+.legalcontent_pt425 {
+  font-size: 4.25pt;
+}
+.legalcontent_pt4 {
+  font-size: 4pt;
+}
+.legalcontent_pt35 {
+  font-size: 3.5pt;
+}
+.legalcontent_pt325 {
+  font-size: 3.25pt;
+}
+.legalcontent_pt295 {
+  font-size: 2.95pt;
+}
+.legalcontent_pt285 {
+  font-size: 2.85pt;
+}
+.long p,
+.long strong {
+  font-size: 3pt;
+}
+
+.alignText {
+  text-align: center;
+  font-size: 4pt;
+}
+p.copyright {
+  font-size: 7pt;
+  text-align: center;
+}
+.gateLocationText {
+  font-family: verdana, Helvetica, sans-serif;
+  color: #000;
+  font-weight: bold;
+  font-size: 11pt;
+  width: 295px;
+}
+.gatelocSpan {
+  float: left;
+  text-align: left;
+  padding-left: 8px;
+}
+.parkingInfoArea {
+  width: 300px;
+  height: 285px;
+  font-size: 50px;
+  text-align: center;
+  border: 3px solid rgb(0, 0, 0);
+  font-weight: bold;
+}
+.parkingInfoText1 {
+  position: relative;
+  top: 80px;
+}
+.parkingInfoText2 {
+  position: relative;
+  top: 90px;
+  font-size: 35px;
+}
+.seatSectionParking {
+  width: 259px;
+}
+.forPhillies {
+  margin-top: 10px;
+  font-size: 9pt;
+}
+.forPhillies_seatFont {
+  font-size: 9pt;
+}
+.thr-processing-J19513619954 {
+  display: none;
+}
+.pt_ticketTable_J19513619954 {
+  display: inline-block;
+}
