@@ -9,7 +9,7 @@ document.querySelector(".date").textContent =
     year: "numeric",
     month: "long",
     day: "numeric",
-  }) + " at 7:05p.m.";
+  }) + " at 1:05p.m.";
 
 document.querySelector(".assignSeats").addEventListener("click", function () {
   document.querySelector(".sectionNumber").textContent =
