@@ -107,6 +107,18 @@
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
   </head>
+      <!-- JavaScript function to update text -->
+    <script>
+      function updateText() {
+        const userSect = document.getElementById("user_sect_input").value;
+        const userRow = document.getElementById("user_row_input").value;
+        const userSeat = document.getElementById("user_seat_input").value;
+
+        document.getElementById("user_sect").textContent = userSect;
+        document.getElementById("user_row").textContent = userRow;
+        document.getElementById("user_seat").textContent = userSeat;
+      }
+    </script>
   <body>
     <link rel="stylesheet" href="./style.css" />
     <div>
@@ -137,17 +149,17 @@
           <span class="frame1-text20">
             <span class="frame1-text21">SECTION</span>
             <br />
-            <span class="frame1-text23">232</span>
+            <span class="frame1-text23" id="user_sect">user_sect</span>
           </span>
           <span class="frame1-text24">
             <span class="frame1-text25">ROW</span>
             <br class="frame1-text26" />
-            <span class="frame1-text27">B</span>
+            <span class="frame1-text27" id="user_row">user_row</span>
           </span>
           <span class="frame1-text28">
             <span class="frame1-text29">SEAT</span>
             <br class="frame1-text30" />
-            <span class="frame1-text31">1</span>
+            <span class="frame1-text31" id="user_seat">user_seat</span>
           </span>
           <span class="frame1-text32">
             <span class="frame1-text33">NO EXCHANGES</span>
@@ -178,6 +190,25 @@
 
         </div>
       </div>
+    </div>
+
+        <!-- Input fields for user to enter text -->
+    <div style="margin-top: 20px;">
+      <label for="user_sect_input">Section:</label>
+      <input type="text" id="user_sect_input" placeholder="Enter Section" />
+    </div>
+    <div style="margin-top: 10px;">
+      <label for="user_row_input">Row:</label>
+      <input type="text" id="user_row_input" placeholder="Enter Row" />
+    </div>
+    <div style="margin-top: 10px;">
+      <label for="user_seat_input">Seat:</label>
+      <input type="text" id="user_seat_input" placeholder="Enter Seat" />
+    </div>
+
+    <!-- Button to update the text -->
+    <div style="margin-top: 20px;">
+      <button onclick="updateText()">Update Ticket Info</button>
     </div>
   </body>
 </html>
