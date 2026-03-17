@@ -28,97 +28,343 @@
         fill: var(--dl-color-theme-neutral-dark);
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-      <!-- JavaScript function to update text -->
-    <script>
-      function updateText() {
-        const userSect = document.getElementById("user_sect_input").value;
-        const userRow = document.getElementById("user_row_input").value;
-        const userSeat = document.getElementById("user_seat_input").value;
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
 
-        document.getElementById("user_sect").textContent = userSect;
-        document.getElementById("user_row").textContent = userRow;
-        document.getElementById("user_seat").textContent = userSeat;
+    <style>
+      /* ── Control panel styles ─────────────────────────────────── */
+      #control-panel {
+        max-width: 480px;
+        margin: 24px auto 48px;
+        padding: 0 16px;
+        font-family: Inter, sans-serif;
       }
-    </script>
+
+      #control-panel h2 {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #444;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+      }
+
+      .cp-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 14px;
+      }
+
+      .cp-field label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .cp-field input {
+        font-size: 17px;
+        padding: 12px 14px;
+        border: 1.5px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        width: 100%;
+        -webkit-appearance: none;
+      }
+
+      .cp-field input:focus {
+        border-color: #c8102e;
+      }
+
+      /* Autocomplete dropdown */
+      #team-suggestions {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 1.5px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        background: #fff;
+        max-height: 220px;
+        overflow-y: auto;
+        display: none;
+        position: relative;
+        z-index: 100;
+      }
+
+      #team-suggestions li {
+        padding: 12px 14px;
+        font-size: 16px;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      #team-suggestions li:last-child {
+        border-bottom: none;
+      }
+
+      #team-suggestions li:hover,
+      #team-suggestions li.active {
+        background: #f5e8ea;
+      }
+
+      /* Row of three inputs */
+      .cp-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .cp-row .cp-field {
+        margin-bottom: 0;
+      }
+
+      /* Update button */
+      #update-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #fff;
+        background: #c8102e;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 4px;
+        -webkit-appearance: none;
+      }
+
+      #update-btn:active {
+        background: #a00d25;
+      }
+
+      .cp-field select {
+        font-size: 17px;
+        padding: 12px 14px;
+        border: 1.5px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        width: 100%;
+        -webkit-appearance: none;
+        background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E") no-repeat right 14px center;
+        background-size: 10px;
+      }
+
+      .cp-field select:focus {
+        border-color: #c8102e;
+      }
+
+      
+        text-align: center;
+        font-size: 13px;
+        color: #28a745;
+        margin-top: 10px;
+        height: 18px;
+        transition: opacity 0.4s;
+      }
+    </style>
+  </head>
+
+  <script>
+    // ── MLB team data: full name → short nickname ──────────────────
+    const MLB_TEAMS = [
+      { full: "Arizona Diamondbacks",    short: "Diamondbacks" },
+      { full: "Atlanta Braves",          short: "Braves" },
+      { full: "Baltimore Orioles",       short: "Orioles" },
+      { full: "Boston Red Sox",          short: "Red Sox" },
+      { full: "Chicago Cubs",            short: "Cubs" },
+      { full: "Chicago White Sox",       short: "White Sox" },
+      { full: "Cincinnati Reds",         short: "Reds" },
+      { full: "Cleveland Guardians",     short: "Guardians" },
+      { full: "Colorado Rockies",        short: "Rockies" },
+      { full: "Detroit Tigers",          short: "Tigers" },
+      { full: "Houston Astros",          short: "Astros" },
+      { full: "Kansas City Royals",      short: "Royals" },
+      { full: "Los Angeles Angels",      short: "Angels" },
+      { full: "Los Angeles Dodgers",     short: "Dodgers" },
+      { full: "Miami Marlins",           short: "Marlins" },
+      { full: "Milwaukee Brewers",       short: "Brewers" },
+      { full: "Minnesota Twins",         short: "Twins" },
+      { full: "New York Mets",           short: "Mets" },
+      { full: "New York Yankees",        short: "Yankees" },
+      { full: "Oakland Athletics",       short: "Athletics" },
+      { full: "Philadelphia Phillies",   short: "Phillies" },
+      { full: "Pittsburgh Pirates",      short: "Pirates" },
+      { full: "San Diego Padres",        short: "Padres" },
+      { full: "San Francisco Giants",    short: "Giants" },
+      { full: "Seattle Mariners",        short: "Mariners" },
+      { full: "St. Louis Cardinals",     short: "Cardinals" },
+      { full: "Tampa Bay Rays",          short: "Rays" },
+      { full: "Texas Rangers",           short: "Rangers" },
+      { full: "Toronto Blue Jays",       short: "Blue Jays" },
+      { full: "Washington Nationals",    short: "Nationals" }
+    ];
+
+    let selectedTeam = null; // currently selected team object
+
+    function initAutocomplete() {
+      const input = document.getElementById("team-input");
+      const list  = document.getElementById("team-suggestions");
+      let activeIdx = -1;
+
+      input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        list.innerHTML = "";
+        activeIdx = -1;
+        selectedTeam = null;
+
+        if (!q) { list.style.display = "none"; return; }
+
+        const matches = MLB_TEAMS.filter(t =>
+          t.full.toLowerCase().includes(q) || t.short.toLowerCase().includes(q)
+        );
+
+        if (!matches.length) { list.style.display = "none"; return; }
+
+        matches.forEach((team, i) => {
+          const li = document.createElement("li");
+          li.textContent = team.full;
+          li.addEventListener("mousedown", (e) => {
+            e.preventDefault(); // keep focus on input briefly so blur doesn't fire first
+            selectTeam(team);
+          });
+          list.appendChild(li);
+        });
+
+        list.style.display = "block";
+      });
+
+      // Keyboard nav
+      input.addEventListener("keydown", (e) => {
+        const items = list.querySelectorAll("li");
+        if (!items.length) return;
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          activeIdx = Math.min(activeIdx + 1, items.length - 1);
+          items.forEach((el, i) => el.classList.toggle("active", i === activeIdx));
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          activeIdx = Math.max(activeIdx - 1, 0);
+          items.forEach((el, i) => el.classList.toggle("active", i === activeIdx));
+        } else if (e.key === "Enter" && activeIdx >= 0) {
+          e.preventDefault();
+          const matches = MLB_TEAMS.filter(t =>
+            t.full.toLowerCase().includes(input.value.trim().toLowerCase()) ||
+            t.short.toLowerCase().includes(input.value.trim().toLowerCase())
+          );
+          if (matches[activeIdx]) selectTeam(matches[activeIdx]);
+        } else if (e.key === "Escape") {
+          list.style.display = "none";
+        }
+      });
+
+      input.addEventListener("blur", () => {
+        setTimeout(() => { list.style.display = "none"; }, 150);
+      });
+    }
+
+    function selectTeam(team) {
+      selectedTeam = team;
+      document.getElementById("team-input").value = team.full;
+      document.getElementById("team-suggestions").style.display = "none";
+    }
+
+    // ── Format today's date as "Sat, Jul 5" ───────────────────────
+    function getTodayFormatted() {
+      const now = new Date();
+      const days   = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+      const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      return days[now.getDay()] + ", " + months[now.getMonth()] + " " + now.getDate();
+    }
+
+    function updateDatetime() {
+      const time = document.getElementById("time-select").value;
+      const dateStr = getTodayFormatted() + " • " + time;
+      document.getElementById("ticket-datetime").textContent = dateStr;
+    }
+
+    
+    function updateTicket() {
+      const sect  = document.getElementById("user_sect_input").value.trim();
+      const row   = document.getElementById("user_row_input").value.trim();
+      const seat  = document.getElementById("user_seat_input").value.trim();
+      const teamFull  = selectedTeam ? selectedTeam.full  : document.getElementById("team-input").value.trim();
+      const teamShort = selectedTeam ? selectedTeam.short : teamFull; // fallback: use whatever was typed
+
+      // Update ticket display
+      if (sect) document.getElementById("user_sect").textContent = sect;
+      if (row)  document.getElementById("user_row").textContent  = row;
+      if (seat) document.getElementById("user_seat").textContent = seat;
+
+      if (teamFull) {
+        document.getElementById("ticket-title").textContent = teamFull + " at Washington Nationals";
+        document.getElementById("ticket-subtitle").textContent = teamShort + " @ Nationals";
+      }
+
+      // Update datetime
+      updateDatetime();
+
+      // Persist to localStorage
+      const time = document.getElementById("time-select").value;
+      const saved = { sect, row, seat, teamFull, teamShort, time };
+      localStorage.setItem("ticketSettings", JSON.stringify(saved));
+
+      // Flash confirmation
+      const notice = document.getElementById("saved-notice");
+      notice.style.opacity = "1";
+      notice.textContent = "✓ Saved";
+      setTimeout(() => { notice.style.opacity = "0"; }, 2000);
+    }
+
+    // ── Restore saved values on page load ─────────────────────────
+    window.addEventListener("DOMContentLoaded", () => {
+      initAutocomplete();
+
+      // Always show today's date immediately on load
+      const defaultTime = document.getElementById("time-select").value;
+      document.getElementById("ticket-datetime").textContent = getTodayFormatted() + " • " + defaultTime;
+
+      const raw = localStorage.getItem("ticketSettings");
+      if (!raw) return;
+      try {
+        const s = JSON.parse(raw);
+        if (s.sect) {
+          document.getElementById("user_sect_input").value = s.sect;
+          document.getElementById("user_sect").textContent = s.sect;
+        }
+        if (s.row) {
+          document.getElementById("user_row_input").value = s.row;
+          document.getElementById("user_row").textContent = s.row;
+        }
+        if (s.seat) {
+          document.getElementById("user_seat_input").value = s.seat;
+          document.getElementById("user_seat").textContent = s.seat;
+        }
+        if (s.teamFull) {
+          document.getElementById("team-input").value = s.teamFull;
+          selectedTeam = { full: s.teamFull, short: s.teamShort };
+          document.getElementById("ticket-title").textContent    = s.teamFull + " at Washington Nationals";
+          document.getElementById("ticket-subtitle").textContent = s.teamShort + " @ Nationals";
+        }
+        if (s.time) {
+          document.getElementById("time-select").value = s.time;
+        }
+        // Re-render datetime with today's date + saved (or default) time
+        const restoredTime = s.time || document.getElementById("time-select").value;
+        document.getElementById("ticket-datetime").textContent = getTodayFormatted() + " • " + restoredTime;
+      } catch(e) { /* ignore corrupt storage */ }
+    });
+  </script>
+
   <body>
     <link rel="stylesheet" href="./style.css" />
     <div>
@@ -126,21 +372,15 @@
 
       <div class="frame1-container">
         <div class="frame1-frame1">
-          <span class="frame1-text10">
-            <span>Boston Red Sox at Washington Nationals</span>
+          <!-- TITLE — now driven by JS, id added, default text preserved -->
+          <span class="frame1-text10" id="ticket-title">
+            Boston Red Sox at Washington Nationals
           </span>
-          <img
-            alt="Rectangle4143"
-            src="public/external/rectangle4143-y7qb-200h.png"
-            class="frame1-rectangle4"
-          />
-          <img
-            alt="Ticket1524"
-            src="public/external/ticket1524-shtg-500h.png"
-            class="frame1-ticket"
-          />
-          <span class="frame1-text12"><span>Red Sox @ Nationals</span></span>
-          <span class="frame1-text14"><span>Sat, Jul 5 • 4:05 PM</span></span>
+          <img alt="Rectangle4143" src="public/external/rectangle4143-y7qb-200h.png" class="frame1-rectangle4" />
+          <img alt="Ticket1524" src="public/external/ticket1524-shtg-500h.png" class="frame1-ticket" />
+          <!-- SUBTITLE — now driven by JS, id added -->
+          <span class="frame1-text12" id="ticket-subtitle"><span>Red Sox @ Nationals</span></span>
+          <span class="frame1-text14" id="ticket-datetime"><span>Sat, Jul 5 • 4:05 PM</span></span>
           <span class="frame1-text16">
             <span>BFZ7-M5A93J7C</span>
             <br />
@@ -166,49 +406,68 @@
             <br class="frame1-text34" />
             <span class="frame1-text35">&nbsp;Located on Level 1</span>
           </span>
-          <img
-            alt="BG1526"
-            src="public/external/bg1526-1c3t-500w.png"
-            class="frame1bg"
-          />
+          <img alt="BG1526" src="public/external/bg1526-1c3t-500w.png" class="frame1bg" />
           <span class="frame1-text36">VIEW TICKET TERMS</span>
           <span class="frame1-text37"><span>1 of 2</span></span>
-          <img
-            alt="Line12538"
-            src="public/external/line12538-01ba.svg"
-            class="frame1-line1"
-          />
-          <img
-            alt="Line22541"
-            src="public/external/line22541-d93h.svg"
-            class="frame1-line2"
-          />
-<video class="frame1-rectangle2" autoplay loop muted>
-  <source src="public/external/bounce.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+          <img alt="Line12538" src="public/external/line12538-01ba.svg" class="frame1-line1" />
+          <img alt="Line22541" src="public/external/line22541-d93h.svg" class="frame1-line2" />
+          <video class="frame1-rectangle2" autoplay loop muted>
+            <source src="public/external/bounce.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
 
-        <!-- Input fields for user to enter text -->
-    <div style="margin-top: 20px;">
-      <label for="user_sect_input">Section:</label>
-      <input type="text" id="user_sect_input" placeholder="Enter Section" />
-    </div>
-    <div style="margin-top: 10px;">
-      <label for="user_row_input">Row:</label>
-      <input type="text" id="user_row_input" placeholder="Enter Row" />
-    </div>
-    <div style="margin-top: 10px;">
-      <label for="user_seat_input">Seat:</label>
-      <input type="text" id="user_seat_input" placeholder="Enter Seat" />
+    <!-- ── Control Panel ──────────────────────────────────────────── -->
+    <div id="control-panel">
+      <h2>Ticket Settings</h2>
+
+      <!-- Visiting team with autocomplete -->
+      <div class="cp-field">
+        <label for="team-input">Visiting Team</label>
+        <input
+          type="text"
+          id="team-input"
+          placeholder="Type team name…"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+        />
+        <ul id="team-suggestions"></ul>
+      </div>
+
+      <!-- Game time selector -->
+      <div class="cp-field">
+        <label for="time-select">Game Time</label>
+        <select id="time-select">
+          <option value="4:05 PM">Saturday – 4:05 PM</option>
+          <option value="1:35 PM">Sunday – 1:35 PM</option>
+          <option value="6:45 PM">Evening – 6:45 PM</option>
+          <option value="12:05 PM">Weekday Day – 12:05 PM</option>
+          <option value="1:05 PM">Weekday Day – 1:05 PM</option>
+        </select>
+      </div>
+
+      <!-- Section / Row / Seat side by side -->
+      <div class="cp-row">
+        <div class="cp-field">
+          <label for="user_sect_input">Section</label>
+          <input type="text" id="user_sect_input" placeholder="e.g. 104" inputmode="text" />
+        </div>
+        <div class="cp-field">
+          <label for="user_row_input">Row</label>
+          <input type="text" id="user_row_input" placeholder="e.g. F" inputmode="text" />
+        </div>
+        <div class="cp-field">
+          <label for="user_seat_input">Seat</label>
+          <input type="text" id="user_seat_input" placeholder="e.g. 7" inputmode="numeric" />
+        </div>
+      </div>
+
+      <button id="update-btn" onclick="updateTicket()">Update Ticket</button>
+      <div id="saved-notice"></div>
     </div>
 
-    <!-- Button to update the text -->
-    <div style="margin-top: 20px;">
-      <button onclick="updateText()">Update Ticket Info</button>
-    </div>
   </body>
 </html>
