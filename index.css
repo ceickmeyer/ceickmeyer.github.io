@@ -9,6 +9,7 @@
 .frame1-frame1 {
   gap: 9px;
   width: 100%;
+  max-width: 413px;
   height: auto;
   display: flex;
   padding: 47px 0;
@@ -35,9 +36,9 @@
   text-decoration: none;
 }
 .frame1-rectangle4 {
-  left: 0px;
-  width: 413px;
-  bottom: -746px;
+  left: 0;
+  width: 100%;
+  bottom: -742px;
   height: 53px;
   z-index: 2;
   position: absolute;
@@ -216,11 +217,12 @@
 }
 .frame1bg {
   top: 75px;
-  left: -1px;
-  width: 413px;
+  left: 0;
+  width: 100%;
   height: 708px;
   z-index: 1;
   position: absolute;
+  object-fit: cover;
 }
 .frame1-text36 {
   left: 33px;
@@ -274,7 +276,7 @@
 }
 .frame1-rectangle2 {
   left: 26px;
-  width: 359px;
+  width: calc(100% - 52px);
   bottom: -206px;
   height: 135px;
   z-index: 15;
