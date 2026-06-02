@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
 
     <style>
-      /* ── Control panel styles ─────────────────────────────────── */
+      /* ── Control panel ────────────────────────────────────────── */
       #control-panel {
         max-width: 480px;
         margin: 24px auto 48px;
@@ -84,7 +84,6 @@
         border-color: #c8102e;
       }
 
-      /* Autocomplete dropdown */
       #team-suggestions {
         list-style: none;
         margin: 0;
@@ -107,16 +106,13 @@
         border-bottom: 1px solid #f0f0f0;
       }
 
-      #team-suggestions li:last-child {
-        border-bottom: none;
-      }
+      #team-suggestions li:last-child { border-bottom: none; }
 
       #team-suggestions li:hover,
       #team-suggestions li.active {
         background: #f5e8ea;
       }
 
-      /* Row of three inputs */
       .cp-row {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -124,11 +120,8 @@
         margin-bottom: 14px;
       }
 
-      .cp-row .cp-field {
-        margin-bottom: 0;
-      }
+      .cp-row .cp-field { margin-bottom: 0; }
 
-      /* Update button */
       #update-btn {
         width: 100%;
         padding: 15px;
@@ -143,9 +136,7 @@
         -webkit-appearance: none;
       }
 
-      #update-btn:active {
-        background: #a00d25;
-      }
+      #update-btn:active { background: #a00d25; }
 
       .cp-field select {
         font-size: 17px;
@@ -159,11 +150,9 @@
         background-size: 10px;
       }
 
-      .cp-field select:focus {
-        border-color: #c8102e;
-      }
+      .cp-field select:focus { border-color: #c8102e; }
 
-      
+      #saved-notice {
         text-align: center;
         font-size: 13px;
         color: #28a745;
@@ -171,11 +160,260 @@
         height: 18px;
         transition: opacity 0.4s;
       }
+
+      /* ── Layout toggle ────────────────────────────────────────── */
+      .layout-toggle-row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .layout-toggle-btn {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 8px;
+        border: 1.5px solid #ccc;
+        background: #fff;
+        color: #444;
+        cursor: pointer;
+        font-family: Inter, sans-serif;
+        -webkit-appearance: none;
+      }
+
+      .layout-toggle-btn.active {
+        background: #c8102e;
+        color: #fff;
+        border-color: #c8102e;
+      }
+
+      /* ── Layout 2 ─────────────────────────────────────────────── */
+      .layout2-outer {
+        width: 100%;
+        min-height: 100vh;
+        background: #c8102e;
+      }
+
+      .layout2-phone {
+        width: 100%;
+        background: #c8102e;
+        padding: 20px 17px 28px;
+        font-family: Roboto, sans-serif;
+      }
+
+      /* Force Roboto on every element inside layout 2 */
+      .layout2-phone, .layout2-phone * {
+        font-family: Roboto, sans-serif;
+      }
+
+      .layout2-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+
+      .layout2-close-btn {
+        background: none;
+        border: none;
+        padding: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        -webkit-appearance: none;
+      }
+
+      .layout2-teams-row {
+        position: relative;
+        margin-bottom: 4px;
+      }
+
+      .layout2-teams-row .layout2-teams-text {
+        margin-bottom: 0;
+        padding-right: 40px;
+      }
+
+      .layout2-w-logo {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 31px;
+        width: auto;
+      }
+
+      .layout2-datetime-text {
+        color: rgba(255,255,255,0.9);
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .layout2-teams-text {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 900;
+        margin-bottom: 4px;
+      }
+
+      .layout2-venue-text {
+        color: rgba(255,255,255,0.9);
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .layout2-promo-text {
+        color: rgba(255,255,255,0.8);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .layout2-card {
+        overflow: hidden;
+        margin: 16px 0 0;
+        border: 1.5px solid #fff;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+      }
+
+      /* Plain white QR section — no background image, just white + centered video */
+      .layout2-qr-section {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 16px 4px 16px;
+      }
+
+      .layout2-bounce-video {
+        width: 120%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .layout2-ticket-text {
+        margin-top: 8px;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 400;
+        color: rgba(0,0,0,0.7);
+        line-height: 17px;
+      }
+
+      /* Red lower section — bg image is normal flow (sets container height).
+         Content is absolutely overlaid as a flex column filling that same height. */
+      .layout2-lower {
+        position: relative;
+        background: #c8102e;
+      }
+
+      /* Normal-flow: width 100%, height auto → natural aspect ratio drives container height */
+      .layout2-lower-bg {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      /* Covers the exact image area; flex column distributes content top-to-bottom */
+      .layout2-lower-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .layout2-seat-bar {
+        display: flex;
+        justify-content: space-around;
+        padding: 14px 18px 12px;
+      }
+
+      .layout2-seat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        min-width: 60px;
+      }
+
+      .layout2-seat-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        margin-bottom: 3px;
+      }
+
+      .layout2-seat-val {
+        font-size: 15px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+
+      .layout2-lower-divider {
+        height: 1px;
+        background: rgba(255,255,255,0.4);
+        margin: 0 5%;
+      }
+
+      /* flex:1 makes this grow, pushing namerow to the bottom of the image */
+      .layout2-individual {
+        flex: 1;
+        padding: 12px 18px 0;
+      }
+
+      .layout2-ind-label {
+        font-size: 10px;
+        color: rgba(255,255,255,0.8);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        margin-bottom: 3px;
+      }
+
+      .layout2-ind-value {
+        font-size: 12px;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      /* Name + number left, info button right */
+      .layout2-namerow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 18px 14px;
+      }
+
+      .layout2-name-text {
+        font-size: 11px;
+        color: rgba(255,255,255,0.85);
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .layout2-num-text {
+        font-size: 13px;
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .layout2-info-btn {
+        background: none;
+        border: none;
+        padding: 2px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        -webkit-appearance: none;
+      }
     </style>
   </head>
 
   <script>
-    // ── MLB team data: full name → short nickname ──────────────────
     const MLB_TEAMS = [
       { full: "Arizona Diamondbacks",    short: "Diamondbacks" },
       { full: "Atlanta Braves",          short: "Braves" },
@@ -209,7 +447,7 @@
       { full: "Washington Nationals",    short: "Nationals" }
     ];
 
-    let selectedTeam = null; // currently selected team object
+    let selectedTeam = null;
 
     function initAutocomplete() {
       const input = document.getElementById("team-input");
@@ -230,11 +468,11 @@
 
         if (!matches.length) { list.style.display = "none"; return; }
 
-        matches.forEach((team, i) => {
+        matches.forEach((team) => {
           const li = document.createElement("li");
           li.textContent = team.full;
           li.addEventListener("mousedown", (e) => {
-            e.preventDefault(); // keep focus on input briefly so blur doesn't fire first
+            e.preventDefault();
             selectTeam(team);
           });
           list.appendChild(li);
@@ -243,7 +481,6 @@
         list.style.display = "block";
       });
 
-      // Keyboard nav
       input.addEventListener("keydown", (e) => {
         const items = list.querySelectorAll("li");
         if (!items.length) return;
@@ -278,7 +515,6 @@
       document.getElementById("team-suggestions").style.display = "none";
     }
 
-    // ── Format today's date as "Sat, Jul 5" ───────────────────────
     function getTodayFormatted() {
       const now = new Date();
       const days   = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -288,79 +524,117 @@
 
     function updateDatetime() {
       const time = document.getElementById("time-select").value;
-      const dateStr = getTodayFormatted() + " • " + time;
-      document.getElementById("ticket-datetime").textContent = dateStr;
+      document.getElementById("ticket-datetime").textContent = getTodayFormatted() + " • " + time;
     }
 
-    
-    function updateTicket() {
-      const sect  = document.getElementById("user_sect_input").value.trim();
-      const row   = document.getElementById("user_row_input").value.trim();
-      const seat  = document.getElementById("user_seat_input").value.trim();
-      const teamFull  = selectedTeam ? selectedTeam.full  : document.getElementById("team-input").value.trim();
-      const teamShort = selectedTeam ? selectedTeam.short : teamFull; // fallback: use whatever was typed
+    function switchLayout(num) {
+      document.getElementById("layout1").style.display = num === 1 ? "" : "none";
+      document.getElementById("layout2").style.display = num === 2 ? "" : "none";
+      document.querySelectorAll(".layout-toggle-btn").forEach((btn, i) => {
+        btn.classList.toggle("active", i + 1 === num);
+      });
+      localStorage.setItem("activeLayout", num);
+    }
 
-      // Update ticket display
+    function updateTicket() {
+      const sect      = document.getElementById("user_sect_input").value.trim();
+      const row       = document.getElementById("user_row_input").value.trim();
+      const seat      = document.getElementById("user_seat_input").value.trim();
+      const promoDay  = document.getElementById("promo-input").value.trim();
+      const teamFull  = selectedTeam ? selectedTeam.full  : document.getElementById("team-input").value.trim();
+      const teamShort = selectedTeam ? selectedTeam.short : teamFull;
+      const time      = document.getElementById("time-select").value;
+
+      // Layout 1 updates
       if (sect) document.getElementById("user_sect").textContent = sect;
       if (row)  document.getElementById("user_row").textContent  = row;
       if (seat) document.getElementById("user_seat").textContent = seat;
 
       if (teamFull) {
-        document.getElementById("ticket-title").textContent = teamFull + " at Washington Nationals";
+        document.getElementById("ticket-title").textContent    = teamFull + " at Washington Nationals";
         document.getElementById("ticket-subtitle").textContent = teamShort + " @ Nationals";
       }
-
-      // Update datetime
       updateDatetime();
 
-      // Persist to localStorage
-      const time = document.getElementById("time-select").value;
-      const saved = { sect, row, seat, teamFull, teamShort, time };
+      // Layout 2 updates
+      if (teamShort) {
+        document.getElementById("layout2-teams").textContent = teamShort + " @ Nationals";
+      }
+      document.getElementById("layout2-datetime").textContent = getTodayFormatted() + " • " + time + " ET";
+
+      if (sect) document.getElementById("layout2-sect").textContent = sect;
+      if (row)  document.getElementById("layout2-row").textContent  = row;
+      if (seat) document.getElementById("layout2-seat").textContent = seat;
+
+      const promoEl = document.getElementById("layout2-promo");
+      if (promoDay) {
+        promoEl.textContent    = promoDay;
+        promoEl.style.display  = "";
+      } else {
+        promoEl.style.display  = "none";
+      }
+
+      // Persist
+      const saved = { sect, row, seat, teamFull, teamShort, time, promoDay };
       localStorage.setItem("ticketSettings", JSON.stringify(saved));
 
-      // Flash confirmation
       const notice = document.getElementById("saved-notice");
       notice.style.opacity = "1";
       notice.textContent = "✓ Saved";
       setTimeout(() => { notice.style.opacity = "0"; }, 2000);
     }
 
-    // ── Restore saved values on page load ─────────────────────────
     window.addEventListener("DOMContentLoaded", () => {
       initAutocomplete();
 
-      // Always show today's date immediately on load
+      // Restore active layout
+      const activeLayout = parseInt(localStorage.getItem("activeLayout")) || 1;
+      switchLayout(activeLayout);
+
+      // Default datetime
       const defaultTime = document.getElementById("time-select").value;
-      document.getElementById("ticket-datetime").textContent = getTodayFormatted() + " • " + defaultTime;
+      const todayStr = getTodayFormatted();
+      document.getElementById("ticket-datetime").textContent  = todayStr + " • " + defaultTime;
+      document.getElementById("layout2-datetime").textContent = todayStr + " • " + defaultTime + " ET";
 
       const raw = localStorage.getItem("ticketSettings");
       if (!raw) return;
       try {
         const s = JSON.parse(raw);
         if (s.sect) {
-          document.getElementById("user_sect_input").value = s.sect;
-          document.getElementById("user_sect").textContent = s.sect;
+          document.getElementById("user_sect_input").value  = s.sect;
+          document.getElementById("user_sect").textContent  = s.sect;
+          document.getElementById("layout2-sect").textContent = s.sect;
         }
         if (s.row) {
-          document.getElementById("user_row_input").value = s.row;
-          document.getElementById("user_row").textContent = s.row;
+          document.getElementById("user_row_input").value  = s.row;
+          document.getElementById("user_row").textContent  = s.row;
+          document.getElementById("layout2-row").textContent = s.row;
         }
         if (s.seat) {
-          document.getElementById("user_seat_input").value = s.seat;
-          document.getElementById("user_seat").textContent = s.seat;
+          document.getElementById("user_seat_input").value  = s.seat;
+          document.getElementById("user_seat").textContent  = s.seat;
+          document.getElementById("layout2-seat").textContent = s.seat;
         }
         if (s.teamFull) {
-          document.getElementById("team-input").value = s.teamFull;
+          document.getElementById("team-input").value           = s.teamFull;
           selectedTeam = { full: s.teamFull, short: s.teamShort };
           document.getElementById("ticket-title").textContent    = s.teamFull + " at Washington Nationals";
           document.getElementById("ticket-subtitle").textContent = s.teamShort + " @ Nationals";
+          document.getElementById("layout2-teams").textContent   = s.teamShort + " @ Nationals";
         }
         if (s.time) {
           document.getElementById("time-select").value = s.time;
+          const t = s.time;
+          document.getElementById("ticket-datetime").textContent  = todayStr + " • " + t;
+          document.getElementById("layout2-datetime").textContent = todayStr + " • " + t + " ET";
         }
-        // Re-render datetime with today's date + saved (or default) time
-        const restoredTime = s.time || document.getElementById("time-select").value;
-        document.getElementById("ticket-datetime").textContent = getTodayFormatted() + " • " + restoredTime;
+        if (s.promoDay) {
+          document.getElementById("promo-input").value = s.promoDay;
+          const promoEl = document.getElementById("layout2-promo");
+          promoEl.textContent   = s.promoDay;
+          promoEl.style.display = "";
+        }
       } catch(e) { /* ignore corrupt storage */ }
     });
   </script>
@@ -370,15 +644,14 @@
     <div>
       <link href="./index.css" rel="stylesheet" />
 
-      <div class="frame1-container">
+      <!-- ── Layout 1 ───────────────────────────────────────────── -->
+      <div id="layout1" class="frame1-container">
         <div class="frame1-frame1">
-          <!-- TITLE — now driven by JS, id added, default text preserved -->
           <span class="frame1-text10" id="ticket-title">
             Boston Red Sox at Washington Nationals
           </span>
           <img alt="Rectangle4143" src="public/external/rectangle4143-y7qb-200h.png" class="frame1-rectangle4" />
           <img alt="Ticket1524" src="public/external/ticket1524-shtg-500h.png" class="frame1-ticket" />
-          <!-- SUBTITLE — now driven by JS, id added -->
           <span class="frame1-text12" id="ticket-subtitle"><span>Red Sox @ Nationals</span></span>
           <span class="frame1-text14" id="ticket-datetime"><span>Sat, Jul 5 • 4:05 PM</span></span>
           <span class="frame1-text16">
@@ -413,17 +686,113 @@
           <img alt="Line22541" src="public/external/line22541-d93h.svg" class="frame1-line2" />
           <video class="frame1-rectangle2" autoplay loop muted>
             <source src="public/external/bounce.mp4" type="video/mp4">
-            Your browser does not support the video tag.
           </video>
         </div>
       </div>
+
+      <!-- ── Layout 2 ───────────────────────────────────────────── -->
+      <div id="layout2" class="layout2-outer" style="display:none;">
+        <div class="layout2-phone">
+
+          <!-- Top bar -->
+          <div class="layout2-topbar">
+            <button class="layout2-close-btn" aria-label="Close">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 5L5 19M5.00001 5L19 19" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Header text -->
+          <p class="layout2-datetime-text" id="layout2-datetime">Tue, Jun 2 &bull; 6:45 PM ET</p>
+          <div class="layout2-teams-row">
+            <p class="layout2-teams-text" id="layout2-teams">Marlins @ Nationals</p>
+            <img src="public/external/littlew.png" class="layout2-w-logo" alt="Nationals W" />
+          </div>
+          <p class="layout2-venue-text">Nationals Park</p>
+          <p class="layout2-promo-text" id="layout2-promo" style="display:none;"></p>
+
+          <!-- Ticket card -->
+          <div class="layout2-card">
+
+            <!-- Plain white QR section -->
+            <div class="layout2-qr-section">
+              <video class="layout2-bounce-video" autoplay loop muted playsinline>
+                <source src="public/external/bounce.mp4" type="video/mp4">
+              </video>
+              <div class="layout2-ticket-text">
+                <span>BFZ7-M5A93J7C</span><br>
+                <span>A screenshot of your ticket will not be accepted</span>
+              </div>
+            </div>
+
+            <!-- Red lower section: background2.png natural width sets height -->
+            <div class="layout2-lower">
+              <img src="public/external/background2.png" class="layout2-lower-bg" alt="" />
+
+              <!-- Content absolutely overlays the image -->
+              <div class="layout2-lower-content">
+
+                <!-- SECTION / ROW / SEAT -->
+                <div class="layout2-seat-bar">
+                  <div class="layout2-seat-item">
+                    <span class="layout2-seat-label">SECTION</span>
+                    <span class="layout2-seat-val" id="layout2-sect">222</span>
+                  </div>
+                  <div class="layout2-seat-item">
+                    <span class="layout2-seat-label">ROW</span>
+                    <span class="layout2-seat-val" id="layout2-row">W</span>
+                  </div>
+                  <div class="layout2-seat-item">
+                    <span class="layout2-seat-label">SEAT</span>
+                    <span class="layout2-seat-val" id="layout2-seat">15</span>
+                  </div>
+                </div>
+
+                <div class="layout2-lower-divider"></div>
+
+                <!-- INDIVIDUAL — flex:1 so it expands into the W background space -->
+                <div class="layout2-individual">
+                  <p class="layout2-ind-label">INDIVIDUAL</p>
+                  <p class="layout2-ind-value">Located on Level 1</p>
+                </div>
+
+                <div class="layout2-lower-divider"></div>
+
+                <!-- Name / number / info button -->
+                <div class="layout2-namerow">
+                  <div>
+                    <p class="layout2-name-text">Varnson, Art</p>
+                    <p class="layout2-num-text">3318170</p>
+                  </div>
+                  <button class="layout2-info-btn" aria-label="Info">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 17.75C12.4142 17.75 12.75 17.4142 12.75 17V11C12.75 10.5858 12.4142 10.25 12 10.25C11.5858 10.25 11.25 10.5858 11.25 11V17C11.25 17.4142 11.5858 17.75 12 17.75ZM12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z" fill="#ffffff"/>
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
     <!-- ── Control Panel ──────────────────────────────────────────── -->
     <div id="control-panel">
       <h2>Ticket Settings</h2>
 
-      <!-- Visiting team with autocomplete -->
+      <!-- Layout toggle -->
+      <div class="layout-toggle-row">
+        <button class="layout-toggle-btn active" onclick="switchLayout(1)">Layout 1</button>
+        <button class="layout-toggle-btn" onclick="switchLayout(2)">Layout 2</button>
+      </div>
+
+      <!-- Visiting team -->
       <div class="cp-field">
         <label for="team-input">Visiting Team</label>
         <input
@@ -437,7 +806,7 @@
         <ul id="team-suggestions"></ul>
       </div>
 
-      <!-- Game time selector -->
+      <!-- Game time -->
       <div class="cp-field">
         <label for="time-select">Game Time</label>
         <select id="time-select">
@@ -449,7 +818,7 @@
         </select>
       </div>
 
-      <!-- Section / Row / Seat side by side -->
+      <!-- Section / Row / Seat -->
       <div class="cp-row">
         <div class="cp-field">
           <label for="user_sect_input">Section</label>
@@ -463,6 +832,12 @@
           <label for="user_seat_input">Seat</label>
           <input type="text" id="user_seat_input" placeholder="e.g. 7" inputmode="numeric" />
         </div>
+      </div>
+
+      <!-- Promo day (Layout 2 only) -->
+      <div class="cp-field">
+        <label for="promo-input">Promo Day <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional, Layout 2)</span></label>
+        <input type="text" id="promo-input" placeholder="e.g. Lou Gehrig Day" autocomplete="off" />
       </div>
 
       <button id="update-btn" onclick="updateTicket()">Update Ticket</button>
