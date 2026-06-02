@@ -1,0 +1,15 @@
+{
+  "name": "Nats Ticket",
+  "short_name": "Ticket",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#c8102e",
+  "theme_color": "#c8102e",
+  "icons": [
+    {
+      "src": "public/external/littlew.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
