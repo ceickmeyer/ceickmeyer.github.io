@@ -40,6 +40,63 @@
     <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
 
     <style>
+      /* ── Auth overlay ─────────────────────────────────────────── */
+      #auth-overlay {
+        position: fixed;
+        inset: 0;
+        background: #c8102e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        font-family: Roboto, sans-serif;
+        padding: 32px;
+      }
+
+      #auth-overlay h1 {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        letter-spacing: 0.02em;
+      }
+
+      #auth-input {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 16px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        text-align: center;
+        letter-spacing: 0.1em;
+        -webkit-appearance: none;
+      }
+
+      #auth-btn {
+        margin-top: 16px;
+        width: 100%;
+        max-width: 300px;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #c8102e;
+        background: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        -webkit-appearance: none;
+      }
+
+      #auth-error {
+        margin-top: 12px;
+        color: rgba(255,255,255,0.85);
+        font-size: 14px;
+        height: 18px;
+      }
+
       /* ── Control panel ────────────────────────────────────────── */
       #control-panel {
         max-width: 480px;
@@ -418,6 +475,30 @@
   </head>
 
   <script>
+    // ── Auth ──────────────────────────────────────────────────────
+    function checkAuth() {
+      const val = document.getElementById("auth-input").value.trim().toLowerCase();
+      if (val === "baseball") {
+        localStorage.setItem("nats_auth", "1");
+        document.getElementById("auth-overlay").style.display = "none";
+      } else {
+        const err = document.getElementById("auth-error");
+        err.textContent = "Incorrect password.";
+        document.getElementById("auth-input").value = "";
+        setTimeout(() => { err.textContent = ""; }, 2000);
+      }
+    }
+
+    // Allow Enter key to submit
+    document.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("nats_auth") === "1") {
+        document.getElementById("auth-overlay").style.display = "none";
+      }
+      document.getElementById("auth-input").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") checkAuth();
+      });
+    });
+
     const MLB_TEAMS = [
       { full: "Arizona Diamondbacks",    short: "Diamondbacks" },
       { full: "Atlanta Braves",          short: "Braves" },
@@ -645,6 +726,16 @@
 
   <body>
     <link rel="stylesheet" href="./style.css" />
+    <!-- ── Auth overlay ──────────────────────────────────────────── -->
+    <div id="auth-overlay">
+      <h1>Enter Password</h1>
+      <input id="auth-input" type="password" placeholder="••••••••"
+             autocomplete="off" autocorrect="off" spellcheck="false"
+             inputmode="text" />
+      <button id="auth-btn" onclick="checkAuth()">Continue</button>
+      <p id="auth-error"></p>
+    </div>
+
     <div>
       <link href="./index.css" rel="stylesheet" />
 
